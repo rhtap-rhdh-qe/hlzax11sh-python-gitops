@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hlzax11sh-python-gitops
+  description: This is GitOps manifest for hlzax11sh-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hlzax11sh-python
+    backstage.io/kubernetes-id: hlzax11sh-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hlzax11sh-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hlzax11sh-python
